@@ -10,6 +10,13 @@ jobs:
     strategy:
       matrix:
         node-version: [22.x]
+    environment: ENV_FILE
+    env: 
+      MASTODON_URL: ${{ vars.MASTODON_URL }}
+      SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+      MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+      SUPABASE_SERVICE: ${{ secrets.SUPABASE_SERVICE }}
 
     steps:
       - uses: actions/checkout@v3
@@ -20,11 +27,5 @@ jobs:
       - run: npm ci
       - run: npm i
       - run: node src/index.js
-        env: 
-          MASTODON_URL: ${{ vars.MASTODON_URL }}
-          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
-          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-          SUPABASE_SERVICE: ${{ secrets.SUPABASE_SERVICE }}
           
           

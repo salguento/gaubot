@@ -1,0 +1,19 @@
+{
+  "name": "gau-bot",
+  "version": "1.0.0",
+  "description": "Bot pubiblicador de obras de arte no Mastodon",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "salguento",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.6",
+    "dotenv": "^16.4.5",
+    "masto": "^6.10.1"
+  }
+}

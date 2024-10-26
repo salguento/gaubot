@@ -5,7 +5,7 @@ on:
     - cron: "13 */5 * * *"
 
 jobs:
-  tweet:
+  bot:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,7 +24,7 @@ jobs:
           MASTODON_URL: ${{ vars.MASTODON_URL }}
           SUPABASE_URL: ${{ vars.SUPABASE_URL }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
-          SUPABASE_KEY: ${{secrets.SUPABASE_KEY }}
-          SUPABASE_SERVICE: ${{secrets.SUPABASE_SERVICE }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SUPABASE_SERVICE: ${{ secrets.SUPABASE_SERVICE }}
           
           

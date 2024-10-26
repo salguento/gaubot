@@ -19,5 +19,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm i
-      - run: echo "${{ secrets.ENV_FILE }}" > .env
       - run: node src/index.js
+        env: 
+          MASTODON_URL: ${{ vars.MASTODON_URL }}
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          SUPABASE_KEY: ${{secrets.SUPABASE_KEY }}
+          SUPABASE_SERVICE: ${{secrets.SUPABASE_SERVICE }}
+          
+          

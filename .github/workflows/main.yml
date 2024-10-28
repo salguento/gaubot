@@ -2,7 +2,7 @@ name: send-toot
 on:
   workflow_dispatch:
   schedule:
-    - cron: "13 */5 * * *"
+    - cron: "13 */7 * * *"
 
 jobs:
   bot:
@@ -11,7 +11,7 @@ jobs:
       matrix:
         node-version: [22.x]
     environment: ENV_FILE
-    env: 
+    env:
       MASTODON_URL: ${{ vars.MASTODON_URL }}
       SUPABASE_URL: ${{ vars.SUPABASE_URL }}
       MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
@@ -27,5 +27,3 @@ jobs:
       - run: npm ci
       - run: npm i
       - run: node src/index.js
-          
-          

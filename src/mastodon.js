@@ -67,7 +67,7 @@ export async function mastodon(item) {
       emoji = "🇵🇾 ";
       break;
     case "Peru":
-      emoji = "🇵🇾 ";
+      emoji = "🇵🇪 ";
       break;
     case "Porto Rico":
       emoji = "🇵🇷 ";

@@ -72,7 +72,7 @@ export async function mastodon(item) {
     case "Porto Rico":
       emoji = "🇵🇷 ";
       break;
-    case "Uruguay":
+    case "Uruguai":
       emoji = "🇺🇾 ";
       break;
     case "Venezuela":

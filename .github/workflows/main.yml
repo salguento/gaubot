@@ -19,11 +19,11 @@ jobs:
       SUPABASE_SERVICE: ${{ secrets.SUPABASE_SERVICE }}
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: nick-fields/retry@v3
         with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm i
-      - run: node src/index.js
+          timeout_seconds: 15
+          max_attempts: 3
+          retry_on: error
+          command: |
+            npm ci
+            npm src/index.js
